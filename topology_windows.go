@@ -234,10 +234,10 @@ func (t *Topology) GetCPUBind(flags int) (HwlocCPUSet, error) {
  *
  * \note On non-Linux systems, ::HWLOC_CPUBIND_THREAD can not be used in \p flags.
  */
-func (t *Topology) SetProcCPUBind(pid HwlocPid, set HwlocCPUSet, flags int) error {
-	C.hwloc_set_proc_cpubind(t.hwloc_topology, C.hwloc_pid_t(pid), set.hwloc_cpuset_t(), C.int(flags))
-	return nil
-}
+//func (t *Topology) SetProcCPUBind(pid HwlocPid, set HwlocCPUSet, flags int) error {
+//	C.hwloc_set_proc_cpubind(t.hwloc_topology, C.hwloc_pid_t(pid), set.hwloc_cpuset_t(), C.int(flags))
+//	return nil
+//}
 
 // GetProcCPUBind Get the current physical binding of process pid.
 /*
@@ -250,11 +250,11 @@ func (t *Topology) SetProcCPUBind(pid HwlocPid, set HwlocCPUSet, flags int) erro
  *
  * \note On non-Linux systems, HWLOC_CPUBIND_THREAD can not be used in \p flags.
  */
-func (t *Topology) GetProcCPUBind(pid HwlocPid, flags int) (HwlocCPUSet, error) {
-	var set = NewCPUSet(nil)
-	C.hwloc_get_proc_cpubind(t.hwloc_topology, C.hwloc_pid_t(pid), set.hwloc_cpuset_t(), C.int(flags))
-	return *set, nil
-}
+//func (t *Topology) GetProcCPUBind(pid HwlocPid, flags int) (HwlocCPUSet, error) {
+//	var set = NewCPUSet(nil)
+//	C.hwloc_get_proc_cpubind(t.hwloc_topology, C.hwloc_pid_t(pid), set.hwloc_cpuset_t(), C.int(flags))
+//	return *set, nil
+//}
 
 //#ifdef hwloc_thread_t
 /** \brief Bind a thread \p thread on cpus given in physical bitmap \p set.
@@ -312,11 +312,11 @@ func (t *Topology) GetLastCPULocation(flags int) (HwlocCPUSet, error) {
  *
  * \note On non-Linux systems, ::HWLOC_CPUBIND_THREAD can not be used in \p flags.
  */
-func (t *Topology) GetProcLastCPULocation(pid HwlocPid, flags int) (HwlocCPUSet, error) {
-	var set = NewCPUSet(nil)
-	C.hwloc_get_proc_last_cpu_location(t.hwloc_topology, C.hwloc_pid_t(pid), set.hwloc_cpuset_t(), C.int(flags))
-	return *set, nil
-}
+//func (t *Topology) GetProcLastCPULocation(pid HwlocPid, flags int) (HwlocCPUSet, error) {
+//	var set = NewCPUSet(nil)
+//	C.hwloc_get_proc_last_cpu_location(t.hwloc_topology, C.hwloc_pid_t(pid), set.hwloc_cpuset_t(), C.int(flags))
+//	return *set, nil
+//}
 
 // SetPid Change which process the topology is viewed from.
 /*
@@ -332,10 +332,10 @@ func (t *Topology) GetProcLastCPULocation(pid HwlocPid, flags int) (HwlocCPUSet,
  * \note -1 is returned and errno is set to ENOSYS on platforms that do not
  * support this feature.
  */
-func (t *Topology) SetPid(pid HwlocPid) error {
-	C.hwloc_topology_set_pid(t.hwloc_topology, C.hwloc_pid_t(pid))
-	return nil
-}
+//func (t *Topology) SetPid(pid HwlocPid) error {
+//	C.hwloc_topology_set_pid(t.hwloc_topology, C.hwloc_pid_t(pid))
+//	return nil
+//}
 
 // SetSynthetic Enable synthetic topology.
 /*
@@ -667,5 +667,5 @@ func (t *Topology) AllocGroupObject() (*HwlocObject, error) {
  * before insert, or all of them were empty.
  */
 func (t *Topology) InsertGroupObject(group *HwlocObject) error {
-	return NotImplementError
+    return NotImplementError
 }
