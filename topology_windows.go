@@ -18,7 +18,7 @@ type Topology struct {
 }
 
 func NewTopology() (*Topology, error) {
-	var topology C.hwloc_topology_t = &C.struct_hwloc_topology{}
+	var topology C.hwloc_topology_t
 	C.hwloc_topology_init(&topology) // initialization
 
 	return &Topology{
@@ -667,5 +667,5 @@ func (t *Topology) AllocGroupObject() (*HwlocObject, error) {
  * before insert, or all of them were empty.
  */
 func (t *Topology) InsertGroupObject(group *HwlocObject) error {
-    return NotImplementError
+	return NotImplementError
 }
