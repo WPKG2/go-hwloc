@@ -1,7 +1,7 @@
 package hwloc
 
-//#cgo LDFLAGS: -L${SRCDIR}/out/lib -lhwloc
-//#cgo CFLAGS: -I${SRCDIR}/out/include
+//#cgo LDFLAGS: -L${SRCDIR}/lib -lhwloc
+//#cgo CFLAGS: -I${SRCDIR}/hwloc/include
 //#cgo LDFLAGS: -static -static-libgcc
 // #include <hwloc.h>
 // #include <hwloc/bitmap.h>
